@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>This Is Halloween Trivia - Level Two</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>This Is Halloween Trivia - Level Two</h1>
+  <section id="quiz">
+    <form id="quizForm">
+      <fieldset>
+        <legend>1) What is the name of the scientist who created Sally?</legend>
+        <label><input type="radio" name="q1" value="DrFinkelstein"> A) Dr. Finkelstein</label><br>
+        <label><input type="radio" name="q1" value="DrFrankenstein"> B) Dr. Frankenstein</label><br>
+        <label><input type="radio" name="q1" value="ProfessorPumpkin"> C) Professor Pumpkin</label><br>
+        <label><input type="radio" name="q1" value="MrOogie"> D) Mr. Oogie</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>2) What instrument does Sally use to deliver soup to Dr. Finkelstein?</legend>
+        <label><input type="radio" name="q2" value="Spoon"> A) Spoon</label><br>
+        <label><input type="radio" name="q2" value="Basket"> B) Basket with a spoon</label><br>
+        <label><input type="radio" name="q2" value="Syringe"> C) Syringe</label><br>
+        <label><input type="radio" name="q2" value="Tube"> D) Tube</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>3) Who sings “Kidnap the Sandy Claws”?</legend>
+        <label><input type="radio" name="q3" value="LockShockBarrel"> A) Lock, Shock, and Barrel</label><br>
+        <label><input type="radio" name="q3" value="JackSkellington"> B) Jack Skellington</label><br>
+        <label><input type="radio" name="q3" value="OogieBoogie"> C) Oogie Boogie</label><br>
+        <label><input type="radio" name="q3" value="Sally"> D) Sally</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>4) Who sings “Sally’s Song”?</legend>
+        <label><input type="radio" name="q4" value="Sally"> A) Sally</label><br>
+        <label><input type="radio" name="q4" value="JackSkellington"> B) Jack Skellington</label><br>
+        <label><input type="radio" name="q4" value="OogieBoogie"> C) Oogie Boogie</label><br>
+        <label><input type="radio" name="q4" value="Mayor"> D) The Mayor</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>5) What’s the Mayor’s big personality quirk?</legend>
+        <label><input type="radio" name="q5" value="TwoFaces"> A) He has two faces</label><br>
+        <label><input type="radio" name="q5" value="ThreeArms"> B) He has three arms</label><br>
+        <label><input type="radio" name="q5" value="TwoHeads"> C) He has two heads</label><br>
+        <label><input type="radio" name="q5" value="NoEyes"> D) He has no eyes</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>6) What song does Jack sing while exploring Christmas Town?</legend>
+        <label><input type="radio" name="q6" value="WhatsThis"> A) What’s This?</label><br>
+        <label><input type="radio" name="q6" value="JackLament"> B) Jack’s Lament</label><br>
+        <label><input type="radio" name="q6" value="FinaleReprise"> C) Finale Reprise</label><br>
+        <label><input type="radio" name="q6" value="OogieSong"> D) Oogie’s Song</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>7) What is Jack’s reaction to seeing Christmas for the first time?</legend>
+        <label><input type="radio" name="q7" value="Amazement"> A) Amazement and wonder</label><br>
+        <label><input type="radio" name="q7" value="Fear"> B) Fear</label><br>
+        <label><input type="radio" name="q7" value="Confusion"> C) Confusion only</label><br>
+        <label><input type="radio" name="q7" value="Anger"> D) Anger</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>8) What song opens the movie?</legend>
+        <label><input type="radio" name="q8" value="ThisIsHalloween"> A) This Is Halloween</label><br>
+        <label><input type="radio" name="q8" value="JackLament"> B) Jack’s Lament</label><br>
+        <label><input type="radio" name="q8" value="OogieSong"> C) Oogie’s Song</label><br>
+        <label><input type="radio" name="q8" value="FinaleReprise"> D) Finale (Reprise)</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>9) What animal pulls Jack’s sleigh?</legend>
+        <label><input type="radio" name="q9" value="SkeletalReindeer"> A) Skeletal Reindeer</label><br>
+        <label><input type="radio" name="q9" value="Wolves"> B) Wolves</label><br>
+        <label><input type="radio" name="q9" value="GhostDogs"> C) Ghost dogs</label><br>
+        <label><input type="radio" name="q9" value="Spiders"> D) Giant Spiders</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>10) What color is Sally’s hair?</legend>
+        <label><input type="radio" name="q10" value="Red"> A) Red</label><br>
+        <label><input type="radio" name="q10" value="Blue"> B) Blue</label><br>
+        <label><input type="radio" name="q10" value="Black"> C) Black</label><br>
+        <label><input type="radio" name="q10" value="Green"> D) Green</label>
+      </fieldset>
+
+      <button id="submit" type="button">Submit</button>
+    </form>
+    <div id="result" style="margin-top:1rem"></div>
+  </section>
+
+  <script>
+    (function() {
+      const answers = {
+        q1: 'DrFinkelstein',
+        q2: 'Basket',
+        q3: 'LockShockBarrel',
+        q4: 'Sally',
+        q5: 'TwoFaces',
+        q6: 'WhatsThis',
+        q7: 'Amazement',
+        q8: 'ThisIsHalloween',
+        q9: 'SkeletalReindeer',
+        q10: 'Red'
+      };
+
+      const submit = document.getElementById('submit');
+      const resultEl = document.getElementById('result');
+
+      function getSelected(form, name) {
+        const el = form.querySelector('input[name="' + name + '"]:checked');
+        return el ? el.value : null;
+      }
+
+      submit.addEventListener('click', function() {
+        const form = document.getElementById('quizForm');
+        let score = 0, total = 10;
+
+        for (let q in answers) {
+          const val = getSelected(form, q);
+          if (!val) {
+            resultEl.style.color = 'crimson';
+            resultEl.textContent = 'Please answer all questions.';
+            return;
+          }
+          if (val === answers[q]) score++;
+        }
+
+        resultEl.style.color = score === total ? 'green' : 'black';
+        resultEl.innerHTML = `You scored ${score} out of ${total}.` +
+          (score === total ? ' Perfect! Moving to Level 3...' : ' Try again!');
+
+        if (score === total)
+          setTimeout(() => location.href = 'finish.html', 1200);
+      });
+    })();
+  </script>
+</body>
+</html>

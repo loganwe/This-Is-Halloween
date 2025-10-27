@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>This Is Halloween Trivia - Level One</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image" href="https://m.media-amazon.com/images/I/816L0BCqroL._AC_UF894,1000_QL80_.jpg">
+</head>
+<body>
+    <h1>This Is Halloween Trivia - Level One</h1><br><br>
+    <section id="quiz">
+        <form id="quizForm">
+            <fieldset>
+                <legend>1) Who is the Pumpkin King of Halloween Town?</legend>
+                <label><input type="radio" name="q1" value="JackSkellington"> A) Jack Skellington</label><br>
+                <label><input type="radio" name="q1" value="OogieBoogie"> B) Oogie Boogie</label><br>
+                <label><input type="radio" name="q1" value="Mayor"> C) The Mayor</label><br>
+                <label><input type="radio" name="q1" value="DrFinkelstein"> D) Dr. Finkelstein</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>2) In the song "This Is Halloween", who sings the line “I am the one hiding under your bed”?</legend>
+                <label><input type="radio" name="q2" value="Vampire"> A) One of the Vampires</label><br>
+                <label><input type="radio" name="q2" value="ShadowUnderBed"> B) The Shadow under the bed</label><br>
+                <label><input type="radio" name="q2" value="Werewolf"> C) The Werewolf</label><br>
+                <label><input type="radio" name="q2" value="Clown"> D) The Clown with the tear-away face</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>3) What holiday does Jack Skellington try to take over?</legend>
+                <label><input type="radio" name="q3" value="Christmas"> A) Christmas</label><br>
+                <label><input type="radio" name="q3" value="Thanksgiving"> B) Thanksgiving</label><br>
+                <label><input type="radio" name="q3" value="Easter"> C) Easter</label><br>
+                <label><input type="radio" name="q3" value="ValentinesDay"> D) Valentine’s Day</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>4) What is the name of Jack’s ghost dog?</legend>
+                <label><input type="radio" name="q4" value="Zero"> A) Zero</label><br>
+                <label><input type="radio" name="q4" value="Ghosty"> B) Ghosty</label><br>
+                <label><input type="radio" name="q4" value="Spirit"> C) Spirit</label><br>
+                <label><input type="radio" name="q4" value="Whisper"> D) Whisper</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>5) What does Sally use to put herself back together?</legend>
+                <label><input type="radio" name="q5" value="ThreadAndNeedle"> A) Thread and Needle</label><br>
+                <label><input type="radio" name="q5" value="Glue"> B) Glue</label><br>
+                <label><input type="radio" name="q5" value="MagicPotion"> C) Magic Potion</label><br>
+                <label><input type="radio" name="q5" value="SpiderWebs"> D) Spider Webs</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>6) Who are the three mischievous trick-or-treaters who work for Oogie Boogie?</legend>
+                <label><input type="radio" name="q6" value="LockShockBarrel"> A) Lock, Shock, and Barrel</label><br>
+                <label><input type="radio" name="q6" value="TrickTreatTriplets"> B) Trick, Treat, and Triplets</label><br>
+                <label><input type="radio" name="q6" value="ScareTeam"> C) Scare Team</label><br>
+                <label><input type="radio" name="q6" value="HalloweenHelpers"> D) Halloween Helpers</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>7) Who directed “The Nightmare Before Christmas”?</legend>
+                <label><input type="radio" name="q7" value="HenrySelick"> A) Henry Selick</label><br>
+                <label><input type="radio" name="q7" value="TimBurton"> B) Tim Burton</label><br>
+                <label><input type="radio" name="q7" value="DannyElfman"> C) Danny Elfman</label><br>
+                <label><input type="radio" name="q7" value="ChrisColumbus"> D) Chris Columbus</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>8) What color is Oogie Boogie?</legend>
+                <label><input type="radio" name="q8" value="Green"> A) Green</label><br>
+                <label><input type="radio" name="q8" value="Purple"> B) Purple</label><br>
+                <label><input type="radio" name="q8" value="Orange"> C) Orange</label><br>
+                <label><input type="radio" name="q8" value="Gray"> D) Gray</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>9) What material is Oogie Boogie filled with?</legend>
+                <label><input type="radio" name="q9" value="Bugs"> A) Bugs</label><br>
+                <label><input type="radio" name="q9" value="Sand"> B) Sand</label><br>
+                <label><input type="radio" name="q9" value="Candy"> C) Candy</label><br>
+                <label><input type="radio" name="q9" value="Bones"> D) Bones</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>10) What does Jack say when he discovers Christmas Town?</legend>
+                <label><input type="radio" name="q10" value="WhatsThis"> A) “What’s this?”</label><br>
+                <label><input type="radio" name="q10" value="MerryChristmas"> B) “Merry Christmas!”</label><br>
+                <label><input type="radio" name="q10" value="IveFoundIt"> C) “I’ve found it!”</label><br>
+                <label><input type="radio" name="q10" value="OhMy"> D) “Oh my!”</label>
+            </fieldset>
+
+            <button id="submit" type="button">Submit</button>
+        </form>
+
+        <div id="result" aria-live="polite" style="margin-top:1rem"></div>
+    </section>
+
+    <script>
+        (function () {
+            const answers = { 
+                q1: 'JackSkellington',
+                q2: 'ShadowUnderBed',
+                q3: 'Christmas',
+                q4: 'Zero',
+                q5: 'ThreadAndNeedle',
+                q6: 'LockShockBarrel',
+                q7: 'HenrySelick',
+                q8: 'Green',
+                q9: 'Bugs',
+                q10: 'WhatsThis'
+            };
+
+            const submit = document.getElementById('submit');
+            const resultEl = document.getElementById('result');
+
+            function getSelected(form, name) {
+                const el = form.querySelector('input[name="' + name + '"]:checked');
+                return el ? el.value : null;
+            }
+
+            submit.addEventListener('click', function () {
+                const form = document.getElementById('quizForm');
+                let score = 0;
+                let total = 10;
+
+                for (let q in answers) {
+                    const val = getSelected(form, q);
+                    if (val === null) {
+                        resultEl.style.color = 'crimson';
+                        resultEl.textContent = 'Please answer all questions before submitting.';
+                        return;
+                    }
+                    if (val === answers[q]) score++;
+                }
+
+                resultEl.style.color = score === total ? 'green' : 'black';
+                resultEl.innerHTML = 'You scored ' + score + ' out of ' + total + '.' + 
+                    (score === total 
+                        ? ' Perfect! Moving to Level 2...' 
+                        : ' Try again to get a perfect score to advance.');
+
+                if (score === total) {
+                    setTimeout(function () { 
+                        window.location.href = 'level2.html'; 
+                    }, 1200);
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

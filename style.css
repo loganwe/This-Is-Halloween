@@ -1,0 +1,30 @@
+body{
+    text-align: center;
+    background-color: orange;
+    color: black;
+    /* justify-content: flex-end; */
+    align-items: center;
+}
+
+/* Center a group of buttons horizontally and vertically (flex container) */
+.center-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center; /* centers horizontally */
+    align-items: center;     /* centers vertically */
+}
+
+/* Simple button styling */
+button {
+    background: black;
+    color: orange;
+    border: 2px solid black;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
